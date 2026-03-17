@@ -10,4 +10,7 @@ class MainController extends Controller
         $articles = json_decode(file_get_contents('articles.json'));
         return view('main/articles', ['articles' => $articles]);
     }
+    public function gallery($img){
+        return view('main/gallery', ['img'=>$img]);
+    }
 }
