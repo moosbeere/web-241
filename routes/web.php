@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ArticleController;
 
 //Auth
 Route::get('/signout', [AuthController::class, 'signout']);
@@ -11,6 +12,10 @@ Route::get('/signin', [AuthController::class, 'signin'])->name('login');
 Route::post('authentication', [AuthController::class, 'auth']);
 Route::get('/logout', [AuthController::class, 'logout']);
 
+//Article
+Route::resource('/article', ArticleController::class);
+
+//Main
 Route::get('/', [MainController::class, 'index']);
 Route::get('/gallery/{img}', [MainController::class, 'gallery']);
 
