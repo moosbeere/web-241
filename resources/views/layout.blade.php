@@ -48,7 +48,13 @@
         </li>
       </ul>
       <div class="d-flex">
-        <a href="/signout" class="btn btn-outline-success">Signout</a>
+      @guest
+        <a href="/signin" class="btn btn-outline-success mr-2">SignIn</a>
+        <a href="/signout" class="btn btn-outline-success">SignOut</a>
+      @endguest
+      @auth
+        <a href="/logout" class="btn btn-outline-success">LogOut</a>
+      @endauth
       </div>
     </div>
   </div>

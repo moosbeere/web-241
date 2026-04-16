@@ -9,7 +9,7 @@ use App\Http\Controllers\ArticleController;
 Route::get('/signout', [AuthController::class, 'signout']);
 Route::post('/registr', [AuthController::class, 'registr']);
 Route::get('/signin', [AuthController::class, 'signin'])->name('login');
-Route::post('authentication', [AuthController::class, 'auth']);
+Route::post('auth', [AuthController::class, 'auth']);
 Route::get('/logout', [AuthController::class, 'logout']);
 
 //Article
