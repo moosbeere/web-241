@@ -10,10 +10,10 @@ Route::get('/signout', [AuthController::class, 'signout']);
 Route::post('/registr', [AuthController::class, 'registr']);
 Route::get('/signin', [AuthController::class, 'signin'])->name('login');
 Route::post('auth', [AuthController::class, 'auth']);
-Route::get('/logout', [AuthController::class, 'logout']);
+Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth:sanctum');
 
 //Article
-Route::resource('/article', ArticleController::class);
+Route::resource('/article', ArticleController::class)->middleware('auth:sanctum');
 
 //Main
 Route::get('/', [MainController::class, 'index']);
