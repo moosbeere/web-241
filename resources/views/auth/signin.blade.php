@@ -10,11 +10,16 @@
 </div>
 @endif
 
+@error('email')
+    <div class="alert alert-danger">{{ $message }}</div>
+@enderror
+
+
 <form method="post" action="/auth">
     @csrf
   <div class="mb-3">
     <label for="email" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" required>
+    <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" required value="{{ old('email') }}">
   </div>
   <div class="mb-3">
     <label for="password" class="form-label">Password</label>

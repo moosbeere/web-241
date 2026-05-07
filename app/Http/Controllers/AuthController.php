@@ -42,7 +42,7 @@ class AuthController extends Controller
         }
         return back()->withError([
             'email'=>'Предоставленные учетные данные не соотвествуют нашим записям'
-        ])->inputOnly('email');
+        ])->withInput(['email']);
     }
     public function logout(Request $request){
         Auth::logout();
